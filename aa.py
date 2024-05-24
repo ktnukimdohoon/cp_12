@@ -1,30 +1,18 @@
 class 붕어빵:
-    총_판매금 = 0
-
-    def __init__(self, 내용물, 가격):
-        self.내용물 = 내용물
-        self.가격 = 가격
-        self.판매된_개수 = 0
-
+    def __init__(self, taste, price):
+        self.taste = taste
+        self.price = price
+        self.total = 0
     def sell(self):
-        self.판매된_개수 += 1
-        붕어빵.총_판매금 += self.가격
-        print(f"{self.내용물} 붕어빵을 {self.가격}원에 팔았습니다.")
-
+        print(f"{self.taste}을 {self.price}에 팔았습니다.")
+        self.total += self.price
     def eat(self):
-        print(f"{self.내용물} 붕어빵을 먹었습니다.")
+        print(f"{self.taste}을 먹습니다.")
 
-
-    def 총_판매금_출력(self):
-        print(f"총 판매금: {붕어빵.총_판매금}원")
-
-슈크림_붕어빵 = 붕어빵(내용물="슈크림", 가격=1000)
-팥_붕어빵 = 붕어빵(내용물="팥", 가격=800)
-
-
+슈크림_붕어빵 = 붕어빵("슈크림", 1000)
 슈크림_붕어빵.sell()
-팥_붕어빵.sell()
-팥_붕어빵.sell()
-팥_붕어빵.sell()
+슈크림_붕어빵.sell()
+슈크림_붕어빵.sell()
+슈크림_붕어빵.sell()
 
-슈크림_붕어빵.총_판매금_출력()
+print(슈크림_붕어빵.total)
